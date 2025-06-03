@@ -1,6 +1,8 @@
 import prompts from "prompts"
 import llm from "./mcp-llm.js"
 
+const llmInstance = await llm(true)
+
 while (true) {
   const response = await prompts(
     {
@@ -19,7 +21,7 @@ while (true) {
     break
   }
 
-  await llm(response.userInput)
+  await llmInstance(response.userInput)
 }
 
 // => example prompts:

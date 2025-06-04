@@ -4,7 +4,7 @@ Copy .env.example to .env
 
 And set OPENROUTER_API_KEY
 
-You must have installed `node` and `python`
+You must have installed `node >= 22` and `python >= 3.13`
 
 Install uv (a replacement of pip)
 ```sh

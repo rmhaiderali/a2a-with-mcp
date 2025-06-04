@@ -9,7 +9,7 @@ import functionCallLitral from "./utils/functionCallLitral.js"
 
 dotenv.config()
 
-export default async function init(log = "false") {
+export default async function init(log = false) {
   if (log) console.log(process.env.OPENROUTER_API_KEY)
   const openrouter = createOpenRouter({
     apiKey: process.env.OPENROUTER_API_KEY,

@@ -38,7 +38,10 @@ export default async function init(log = "false") {
 
     while (true) {
       const result = await generateText({
-        model: openrouter.chat("openai/gpt-4o"),
+        model: openrouter.chat(
+          "openai/gpt-4o"
+          // "anthropic/claude-sonnet-4"
+        ),
         messages: messages,
         tools: availableTools,
         system:
@@ -72,23 +75,33 @@ export default async function init(log = "false") {
             })
             if (log)
               console.log(
-                boxen([toolOutput], {
-                  borderColor: "green",
-                  title:
-                    "Output from tool " +
+                boxen(
+                  [
                     functionCallLitral(toolCall.toolName, toolCall.args),
-                })
+                    toolOutput,
+                  ],
+                  {
+                    borderColor: "green",
+                    title: "Output from tool",
+                    titleAlignment: "right",
+                  }
+                )
               )
           } catch (error) {
             toolOutput = { error: error.message }
             if (log)
               console.log(
-                boxen([error.message], {
-                  borderColor: "red",
-                  title:
-                    "Error calling tool " +
+                boxen(
+                  [
                     functionCallLitral(toolCall.toolName, toolCall.args),
-                })
+                    error.message,
+                  ],
+                  {
+                    borderColor: "red",
+                    title: "Error calling tool",
+                    titleAlignment: "right",
+                  }
+                )
               )
           }
 

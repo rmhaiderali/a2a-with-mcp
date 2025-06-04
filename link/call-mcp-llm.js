@@ -1,4 +1,4 @@
-import llm from "../mcp-llm.js"
+import llm from "../llm.js"
 
 const llmInstance = await llm()
 

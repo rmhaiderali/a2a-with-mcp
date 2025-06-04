@@ -4,22 +4,34 @@ Copy .env.example to .env
 
 And set OPENROUTER_API_KEY
 
-```sh
-npm i
-```
+You must have installed `node` and `python`
 
-```sh
-node cli
-```
-
+Install uv (a replacement of pip)
 ```sh
 pip install uv
 ```
 
+Install Node dependencies
+```sh
+npm i
+```
+
+Install Python dependencies
+```sh
+uv sync
+```
+
+Run CLI
+```sh
+node cli
+```
+
+Run A2A Server
 ```sh
 uv run a2a_server.py
 ```
 
+Run A2A Client
 ```sh
 uv run a2a_client.py "<server_url>" "<prompt>"
 ```

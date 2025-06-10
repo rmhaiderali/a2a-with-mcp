@@ -44,5 +44,5 @@ uv run a2a_client.py "<server_url>" "<prompt>"
 
 ### Implementations Used
 
-A2A: https://github.com/google-a2a/a2a-python\
+A2A: https://github.com/google-a2a/a2a-python \
 MCP: https://github.com/modelcontextprotocol/typescript-sdk
